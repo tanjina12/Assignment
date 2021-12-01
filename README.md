@@ -5,7 +5,7 @@ Assignment
 Software libraries are used by other software systems or applications and therefore improvement in their energy efficiency would benefit a lot in developing green software. In that context, benchmarking library projects in terms of energy efficiency related metrics could be proved as helpful for the software developers and researchers. 
 
 ## 1. Library selection
-There are numerous python libraries present today that offer powerful functions for data visualization, image processing, audio/video manipulation, machine learning, computer vision, natural language processing, deep learning and so on. The list of python libraries is quite extensive where each of them provides useful functionalities for performing various tasks without writing codes from scratch. But in this study, we opt for python libraries that support tasks related to natural language processing because of the crucial role that NLP plays in current AI applications. Information extraction from free text is essential for developing chatbots, speech recognition, recommendation engines and so on. Thanks to the development of useful NLP libraries, today, many organizations use NLP techniques to optimize customer support by collecting useful information. NLP improvises the efficiency of text analytics and enhances social media monitoring [Yogish1, 2019]. Some of the most common and practical examples of NLP-related applications are Google translate, Bing translate, spam email filtering, customer services, and voice assistants (e.g. Alexa, Cortana, Siri or Google Assistant) [Weiying(&),2019,].
+There are numerous python libraries present today that offer powerful functions for data visualization, image processing, audio/video manipulation, machine learning, computer vision, natural language processing, deep learning and so on. The list of python libraries is quite extensive where each of them provides useful functionalities for performing various tasks without writing codes from scratch. But in this study, we opt for python libraries that support tasks related to natural language processing because of the crucial role that NLP plays in current AI applications. Information extraction from free text is essential for developing chatbots, speech recognition, recommendation engines and so on. Thanks to the development of useful NLP libraries, today, many organizations use NLP techniques to optimize customer support by collecting useful information. NLP improvises the efficiency of text analytics and enhances social media monitoring [1]. Some of the most common and practical examples of NLP-related applications are Google translate, Bing translate, spam email filtering, customer services, and voice assistants (e.g. Alexa, Cortana, Siri or Google Assistant) [2].
 
 Many NLP libraries are available for researchers and developers to perform standard NLP tasks such as segmentation, tokenization, lemmatization, POS tagging, and NER without the need to develop from scratch. In this context, Python provides developers with an extensive collection of NLP tools and libraries that enable developers to handle a diverse set of NLP-related tasks. In this assignment, we focus on two Python NLP libraries to identify a statically computable metric so as to objectively compare the energy efficiency of the two libraries.
 
@@ -31,7 +31,9 @@ Besides efferent couplings metric, in this assignment I also like to calculate c
 **M2. Cyclomatic complexity (CC):** Cyclomatic complexity is a metric that is used to capture the complexity of a program’s conditional logic. A program with no branches is the least complex; a program with a loop is more complex; and a program with two crossed loops is more complex still. Cyclomatic complexity corresponds roughly to an intuitive idea of the number of different paths through the program—the greater the number of different paths through a program, the higher the complexity [Marsic,2012, p. 231]. Developed by Thomas J. McCabe in 1976, it quantitatively measures the number of linearly-independent paths through a program’s source code. 
 
 ## 3. Comparison of the libraries with respect to the metric values  
-To collect the metric values we have used Scanyp. Scayp is a python static code analysis and code quality tool. Scanyp is a tool that simplifies managing a complex Python code base. Architects and developers can analyze code structure, specify design rules, do effective code reviews and master evolution by comparing different versions of the code.
+To collect the metric values we have used Scanyp[^1]. Scayp is a python static code analysis and code quality tool. Scanyp is a tool that simplifies managing a complex Python code base. Architects and developers can analyze code structure, specify design rules, do effective code reviews and master evolution by comparing different versions of the code.
+
+[^1]: https://www.scanyp.com/
 
 The software code metrics related to the energy efficiency of the two Python library projects are captured using Scanyp on a windows 10 machine. The values for the measured metrics per library can be found in Table 2 below.
 
@@ -79,8 +81,23 @@ Cyclomatic complexity can be calculated using the control flow graphs with respe
 
 Note that, Scanyp comes with a dashboard to quickly visualize all the metrics. The dashboard is available both in the Visual Studio extension and in the report. The graph in Figure 1 displays the method complexity of the NLTK library which we generated using the Scanyp tool. Similarly, the graph in Figure 2 illustrates the method complexity of the Stanza library.
 
+<p align="left">
+  <img src="Graphs/nltk-method complexity.PNG" width="350">
+</p>
+Figure 1: Method complexity of NLTK library<br />
+&nbsp;
+&nbsp;
+&nbsp;
+<p align="left">
+  <img src="Graphs/stanza-method complexity.PNG" width="350">
+</p>
+Figure 2: Method complexity of Stanza library<br />
 
-## Tools
-1. https://www.sonarqube.org/success-download-community-edition/
-2. https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
-3. https://www.scanyp.com/download
+
+<br/>Cyclomatic complexity metrics are an important aspect of determining the quality of software code. I find cyclomatic complexity of the methods a useful metric for energy consumption because it measures the number of pathways through a method. This metric is basically used to figure out areas of code that need certain attention for the source code’s readability, maintainability, and portability. It definitely gives an indication of code improvement in terms of avoiding deep nested loops, conditions etc.  Higher number of decision points implies that the program is more complex and the number of execution points are higher, which could potentially contribute to less energy efficient code structure. If a program has a high complexity number, then the probability of error is high with increased time for maintenance and testing. For example, NLTK library’s max method complexity value is 38, so if a method has a cyclomatic complexity of 38, it means that there are 38 independent paths through the method. This implies that at least 38 test cases are needed to test all the different paths through the code. With a higher complexity number, the program will have more control paths in the code which could lead to more unexpected results and errors that need to be taken care of by the developers. 
+
+## References
+1. Yogish D., Manjunath T.N., Hegadi R.S. (2019) Review on Natural Language Processing Trends and Techniques Using NLTK. In: Santosh K., Hegadi R. (eds) Recent Trends in Image Processing and Pattern Recognition. RTIP2R 2018. Communications in Computer and Information Science, vol 1037. Springer, Singapore. https://doi.org/10.1007/978-981-13-9187-3_53
+2. Weiying K., Pham D.N., Eftekharypour Y., Pheng A.J. (2019) Benchmarking NLP Toolkits for Enterprise Application. In: Nayak A., Sharma A. (eds) PRICAI 2019: Trends in Artificial Intelligence. PRICAI 2019. Lecture Notes in Computer Science, vol 11672. Springer, Cham. https://doi.org/10.1007/978-3-030-29894-4_24
+3. Robert Cecil Martin (2002). Agile Software Development: Principles, Patterns and Practices. Pearson Education. ISBN 0-13-597444-5
+4. Marsic., I. (2012, September). Software Engineering. Rutgers University.
