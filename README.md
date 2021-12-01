@@ -1,7 +1,7 @@
 Assignment
 ==========
 
-## Motivation:
+## Introduction
 Software energy efficiency has gained the increasing attention of the research community. However, accurate measure of energy consumption is a major challenge that state-of-the-art approaches have tried to tackle with a limited success. While several researchers have focused on measuring or predicting the energy consumption of computer hardware, embedded systems and applications using various techniques, the role of software library prject's energy consumption still needs investigation. Software libraries are used by other software systems or applications and therefore improvement in their energy efficiency would benefit a lot in developing green software. In that context, benchmarking library projects in terms of energy efficiency related metrics could be proved as helpful for the software developers and researchers. 
 
 This assignment consists of three tasks. Section 1 documents the selection of two Python libraries which is the first task of this assignment. Section 2 presents the selected metrics to objectively compare the two libraries. And finally, Section 3 describes the comparison of the two libraries with respect to the chosen metric values.
